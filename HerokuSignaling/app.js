@@ -1,7 +1,10 @@
 const WebSocket = require('ws');
 const ip = require('ip');
 
-let serverPort = 8080;
+let serverPort = process.env.PORT;
+if (serverPort == null || serverPort == "") {
+  serverPort = 8000;
+}
 let serverIP = ip.address();
 
 const wss = new WebSocket.Server({ port: serverPort }, () => {
