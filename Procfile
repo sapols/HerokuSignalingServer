@@ -1,1 +1,1 @@
-web: node HerokuSignaling/app.js
+web: node app.js
