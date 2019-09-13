@@ -4,7 +4,14 @@ var express = require('express');
 var path = require('path');
 
 var app = express();
+var cons = require('consolidate');
 
+//View engine setup
+app.engine('html', cons.swig)
+app.set('views', path.join(__dirname , '/views'));
+app.set('view engine', 'html');
+
+//Signaling server 
 let serverPort = process.env.PORT;
 if (serverPort == null || serverPort == "") {
   serverPort = 8000;
@@ -13,7 +20,7 @@ let serverIP = ip.address();
 
 const wss = new WebSocket.Server({ port: serverPort }, () => {
    console.log(`Shawn's WebSocket Server is running! (URL: ws://${serverIP}:${serverPort})`);
-   console.log("Signaling server is now listening on port " + serverPort);
+   console.log("The signaling server is now listening on port " + serverPort);
 });
 
 // Broadcast to all.
