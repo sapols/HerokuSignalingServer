@@ -1,5 +1,9 @@
 const WebSocket = require('ws');
 const ip = require('ip');
+var express = require('express');
+var path = require('path');
+
+var app = express();
 
 let serverPort = process.env.PORT;
 if (serverPort == null || serverPort == "") {

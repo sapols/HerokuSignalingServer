@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "ip": "^1.1.5",
     "npm": "^6.0.1",
+    "path": "^0.12.7",
     "ws": "^5.1.1"
   }
 }
