@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "consolidate": "^0.15.1",
     "express": "^4.17.1",
     "ip": "^1.1.5",
     "npm": "^6.0.1",
